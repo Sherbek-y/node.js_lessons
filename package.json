@@ -1,0 +1,25 @@
+{
+  "name": "nodejslesson",
+  "version": "1.0.0",
+  "description": "firstlesson",
+  "homepage": "https://github.com/Sherbek-y/node.js_lessons#readme",
+  "bugs": {
+    "url": "https://github.com/Sherbek-y/node.js_lessons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sherbek-y/node.js_lessons.git"
+  },
+  "license": "ISC",
+  "author": "Sherbek Yo'ldashev",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon index.js",
+    "say-hello":"Salom Node.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
