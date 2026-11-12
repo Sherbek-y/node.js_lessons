@@ -57,19 +57,21 @@
 // })
 
 
-import https from 'https'
+// import https from 'https'
 
-https.get("https://jsonplaceholder.typicode.com/users/1",(res)=>{
-  let data=""
-  res.on('data',(chunk)=>{
-    data+=chunk
-  })
-  res.on("end",()=>{
-    console.log(data)
-  })
-}).on("error",(err)=>{
-console.log("Xatolik: "+err)
-})
+// https.get("https://jsonplaceholder.typicode.com/users/1",(res)=>{
+//   let data=""
+//   res.on('data',(chunk)=>{
+//     data+=chunk
+//   })
+//   res.on("end",()=>{
+//     console.log(data)
+//   })
+//   res.writeHead(200,{'Content-Type': 'text/html; charset=utf-8'})
+//   res.end(`<h1>${data}</h1>`)
+// }).on("error",(err)=>{
+// console.log("Xatolik: "+err)
+// })
 
 // import https from 'https'
 // async function Jsonmalol() {
@@ -83,3 +85,43 @@ console.log("Xatolik: "+err)
 // }
 
 // Jsonmalol()
+
+
+// import https from 'https'
+// import fs from 'fs'
+
+// const options = {
+//   key: fs.readFileSync('key.pem'),
+//   cert: fs.readFileSync('cert.pem')
+// }
+
+// const server = https.createServer(options,(req,res)=>{
+//   res.writeHead(200,{'Content-Type': ';text/html; charset=utf-8'})
+//   res.end(`<h1>Salom, Dunyo!</h1>`)
+// })
+
+// server.listen(3000,()=>{
+//   console.log("Server 3000-port da ishlayapti")
+// })
+
+
+import https from 'https'
+
+const server=https.get('https://httpbin.org/delay/5',{timeout:5000},(res)=>{
+  let data=''
+  res.on('data',(chunk)=>{
+    data += chunk;
+  })
+  res.on('end',(chunk)=>{
+    console.log("Mana kelgan javob:");
+    console.log(data);
+  })
+})
+
+server.on('timeout',()=>{
+  console.log("Vaqt tugadi! Server javob bermadi")
+  server.destroy()
+})
+server.on('error',()=>{
+  console.log('So\'rov bekor qilindi')
+})
