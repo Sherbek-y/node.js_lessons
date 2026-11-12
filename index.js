@@ -105,23 +105,54 @@
 // })
 
 
-import https from 'https'
+// import https from 'https'
 
-const server=https.get('https://httpbin.org/delay/5',{timeout:5000},(res)=>{
-  let data=''
-  res.on('data',(chunk)=>{
-    data += chunk;
-  })
-  res.on('end',(chunk)=>{
-    console.log("Mana kelgan javob:");
-    console.log(data);
-  })
-})
+// const server=https.get('https://httpbin.org/delay/5',{timeout:5000},(res)=>{
+//   let data=''
+//   res.on('data',(chunk)=>{
+//     data += chunk;
+//   })
+//   res.on('end',(chunk)=>{
+//     console.log("Mana kelgan javob:");
+//     console.log(data);
+//   })
+// })
 
-server.on('timeout',()=>{
-  console.log("Vaqt tugadi! Server javob bermadi")
-  server.destroy()
-})
-server.on('error',()=>{
-  console.log('So\'rov bekor qilindi')
+// server.on('timeout',()=>{
+//   console.log("Vaqt tugadi! Server javob bermadi")
+//   server.destroy()
+// })
+// server.on('error',()=>{
+//   console.log('So\'rov bekor qilindi')
+// })
+
+
+///////////////////////////////////////////////////
+
+// import fs from 'fs'
+// fs.writeFile("Users.txt","Salom mening ismim Sherbek",(err)=>{
+//   if(err){
+//     console.log("Xatolik:" ,err)
+//   }
+//   console.log("Fayl yaratildi File created successfully")
+// })
+
+// import fs from 'fs';
+
+// fs.appendFile("Users.txt","\nSherbek 21 yoshda",(err)=>{
+//   if(err){
+//     console.log("Xatolik:",err)
+//     return
+//   }
+//   console.log("text successfully added - malumot qo'shildi")
+// })
+
+import fs from 'fs'
+
+fs.readFile("Users.txt","utf8",(err,data)=>{
+  if(err){
+    console.log(err)
+    return
+  }
+  console.log(data)
 })
