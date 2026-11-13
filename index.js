@@ -199,10 +199,58 @@
 // })
 //////////////////////////////////////////
 
-import fs from 'fs';
-fs.mkdir("Public/images/photos",{recursive:true},(err)=>{
+// import fs from 'fs';
+// fs.mkdir("Public/images/photos",{recursive:true},(err)=>{
+//   if(err){
+//     console.log(err)
+//   }
+//   console.log("Fayl yaratildi")
+// })
+
+///////////////////////////////////////
+
+// import fs from 'fs';
+// fs.readdir("Public",(err,files)=>{
+//   if(err){
+//     console.log(err)
+//     return
+//   }
+//   console.log(files)
+// })
+
+//////////////////////////////////////////
+
+// import fs from 'fs';
+// fs.rmdir("Public",{ recursive: true, force: true }, (err) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+
+//   console.log("Papka o‘chirildi");
+// });
+
+////////////////////////////////////////
+
+// import fs from "fs";
+// fs.rm("images", {
+//   recursive: true,
+//   force: true
+// }, (err) => {
+//   if (err) console.log(err);
+// });
+
+////////////////////////////////////////
+
+import fs from 'fs'
+fs.stat("Users.txt",(err,stats)=>{
   if(err){
     console.log(err)
+    return
   }
-  console.log("Fayl yaratildi")
+  console.log("Hajmi:",stats.size)
+  console.log("Faylmi:",stats.isFile())
+  console.log("Papkami:", stats.isDirectory());
+  console.log("Yaratilgan:", stats.birthtime);
+  console.log("O‘zgartirilgan:", stats.mtime);
 })
