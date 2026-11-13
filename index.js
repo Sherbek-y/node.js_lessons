@@ -147,12 +147,62 @@
 //   console.log("text successfully added - malumot qo'shildi")
 // })
 
-import fs from 'fs'
+// import fs from 'fs'
 
-fs.readFile("Users.txt","utf8",(err,data)=>{
+// fs.readFile("Users.txt","utf8",(err,data)=>{
+//   if(err){
+//     console.log(err)
+//     return
+//   }
+//   console.log(data)
+// })
+
+
+// import fs from 'fs';
+
+// fs.unlink("Users.txt",(err)=>{
+//   if(err){
+//     console.log("Xatolik: ",err)
+//     return
+//   }
+//   console.log("Fayl o\'chirildi")
+// })
+
+// import fs from 'fs';
+
+// fs.appendFile("Users.js","async function sayHello() {console.log('men appenFile orqali qo'shilgan funksiyaman')}",(err)=>{
+//   if(err){
+//     console.log("Xatolik: ",err)
+//     return
+//   }
+//   console.log("faylga malumot qo\'shildi")
+// })
+
+// import fs from 'fs';
+// fs.rename("Users.js","Users/papkaichigaozgartiribquyilganfayl.txt",(err)=>{
+//   if (err) {
+//     console.log("Xatolik: ",err)
+//     return
+//   }
+//   console.log("Fayl joylashuvi o'\zgartirildi")
+// })
+///////////////////////////////////////////////
+
+// import fs from 'fs';
+// fs.access("Users/papkaichigaozgartiribquyilganfayl.txt",(err)=>{
+//   // Users/ ni qoymasa ham buladi men sinash uchun quydim asosiy faylda yoqligi uchun mavjud emas deb chiqaradi eslatma
+//   if(err){
+//     console.log("Fayl mavjud emas")
+//   }else{
+//     console.log("Fayl mavjud")
+//   }
+// })
+//////////////////////////////////////////
+
+import fs from 'fs';
+fs.mkdir("Public/images/photos",{recursive:true},(err)=>{
   if(err){
     console.log(err)
-    return
   }
-  console.log(data)
+  console.log("Fayl yaratildi")
 })

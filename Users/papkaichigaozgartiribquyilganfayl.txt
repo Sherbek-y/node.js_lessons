@@ -1,0 +1,3 @@
+const fs ='';
+async function sayHello() {console.log('men appenFile orqali qo'shilgan funksiyaman')}
+  sayHello()
