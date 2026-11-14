@@ -242,15 +242,15 @@
 
 ////////////////////////////////////////
 
-import fs from 'fs'
-fs.stat("Users.txt",(err,stats)=>{
-  if(err){
-    console.log(err)
-    return
-  }
-  console.log("Hajmi:",stats.size)
-  console.log("Faylmi:",stats.isFile())
-  console.log("Papkami:", stats.isDirectory());
-  console.log("Yaratilgan:", stats.birthtime);
-  console.log("O‘zgartirilgan:", stats.mtime);
-})
+// import fs from 'fs'
+// fs.stat("Users.txt",(err,stats)=>{
+//   if(err){
+//     console.log(err)
+//     return
+//   }
+//   console.log("Hajmi:",stats.size)
+//   console.log("Faylmi:",stats.isFile())
+//   console.log("Papkami:", stats.isDirectory());
+//   console.log("Yaratilgan:", stats.birthtime);
+//   console.log("O‘zgartirilgan:", stats.mtime);
+// })
